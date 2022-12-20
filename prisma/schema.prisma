@@ -1,0 +1,24 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+
+
+datasource db {
+  provider = "mysql"
+  url      = "mysql://root@localhost:3306/notification"
+  
+}
+
+// Aqui é criado a estrutura da tabela
+model Notification {
+  id           String @id
+  recipientId  String 
+  content      String
+  category     String
+  createdAt    DateTime @default(now())
+  readAt       DateTime? //Interrogação pois pode ser nula
+
+@@index([recipientId]) 
+}
+
