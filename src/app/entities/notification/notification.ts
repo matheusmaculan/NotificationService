@@ -1,3 +1,4 @@
+import { Replace } from "src/helpers/replace";
 import { NotificationContent } from "./notification-content";
 
 export interface NotificationData{
@@ -12,8 +13,11 @@ export class Notification {
     private data: NotificationData;
 
 
-    constructor(data: NotificationData) {
-        this.data = data
+    constructor(data: Replace<NotificationData, { createdAt?: Date }>) { // Usei a função replace para deixar a propriedade createdAt opcional, caso n seja passada ele gerara com o Date()
+        this.data = {
+            ...data,
+            createdAt: data.createdAt ?? new Date()
+        }
     }
 
     public set content(content: NotificationContent) {

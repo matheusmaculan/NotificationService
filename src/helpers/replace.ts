@@ -1,0 +1,1 @@
+export type Replace<T, R> = Omit<T, keyof R> & R; //Utilitario usado para alterar alguma propriedade de interface, classes abstratas, objetos etc

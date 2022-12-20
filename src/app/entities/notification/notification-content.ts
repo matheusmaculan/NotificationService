@@ -1,5 +1,3 @@
-import { throwError } from "rxjs";
-
 export class NotificationContent {
     private readonly content: string;
 
