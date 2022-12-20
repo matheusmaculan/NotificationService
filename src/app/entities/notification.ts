@@ -1,7 +1,7 @@
-import { Content } from "./notification-content";
+import { NotificationContent } from "./notification-content";
 
 export interface NotificationData{
-    content: Content;
+    content: NotificationContent;
     category: string;
     readAt?: Date | null;
     createdAt: Date;
@@ -16,17 +16,17 @@ export class Notification {
         this.data = data
     }
 
-    public set content(content: Content) {
+    public set content(content: NotificationContent) {
         this.data.content = content
     }
 
-    public get content(): Content {
+    public get content(): NotificationContent {
         return this.data.content
     }
 
     public set category(category: string) {
         this.data.category = category
-    }
+    }  
 
     public get category(): string {
         return this.data.category

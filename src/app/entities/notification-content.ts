@@ -1,6 +1,6 @@
 import { throwError } from "rxjs";
 
-export class Content {
+export class NotificationContent {
     private readonly content: string;
 
     get value(): string {
