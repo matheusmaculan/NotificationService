@@ -1,3 +1,4 @@
+import { Injectable } from "@nestjs/common";
 import { Notification } from "../entities/notification/notification";
 import { NotificationContent } from "../entities/notification/notification-content";
 import { NotificationsRepository } from "../repositories/notification-repository";
@@ -11,6 +12,8 @@ interface SendNotificationRequest {
 interface SendoNotificationResponse {
     notification: Notification;
 }
+
+@Injectable()
 export class SendNotification {
     constructor(
         private notificationRepository: NotificationsRepository) {} // Quando for instanciar uma nova notificação irei receber o repositorio

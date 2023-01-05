@@ -15,5 +15,7 @@ export class NotificationContent {
         if (!isContentLenghtValid) {
             throw new Error('Content length error.');
         }
+
+        this.content = content
     }
 }
