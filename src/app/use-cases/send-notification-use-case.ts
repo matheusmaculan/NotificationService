@@ -11,12 +11,11 @@ interface SendNotificationRequest {
 interface SendoNotificationResponse {
     notification: Notification;
 }
-// Use case nada mais é que o requisito funcional, a funcionaliodade de envio da notificação em sí
 export class SendNotification {
     constructor(
-        private notificationRepository: NotificationsRepository) {} 
+        private notificationRepository: NotificationsRepository) {} // Quando for instanciar uma nova notificação irei receber o repositorio
 
-    async execute(request: SendNotificationRequest): Promise<SendoNotificationResponse> {
+    async execute(request: SendNotificationRequest): Promise<SendoNotificationResponse> { // irei receber o conteudo, id e categoria e prometo retornar uma notificação
         const { recipientId, content, category } = request
 
         const notification = new Notification({
@@ -25,7 +24,7 @@ export class SendNotification {
             category,
         })
 
-        await this.notificationRepository.create(notification)
+        await this.notificationRepository.create(notification) // Aqui vou passar a notificação para o repositorio criar ela
 
         return {
             notification,

@@ -1,5 +1,6 @@
 import { Replace } from "src/helpers/replace";
 import { NotificationContent } from "./notification-content";
+import { randomUUID } from 'node:crypto'
 
 export interface NotificationData{
     content: NotificationContent;
@@ -10,14 +11,20 @@ export interface NotificationData{
 }
 
 export class Notification {
+    private _id: string; 
     private data: NotificationData;
 
 
-    constructor(data: Replace<NotificationData, { createdAt?: Date }>) { // Usei a função replace para deixar a propriedade createdAt opcional, caso n seja passada ele gerara com o Date()
+    constructor(data: Replace<NotificationData, { createdAt?: Date }>) { // Usei a função replace para deixar a propriedade createdAt opcional, caso n seja passada ele irar gerar com o Date()
+        this._id = randomUUID();
         this.data = {
             ...data,
             createdAt: data.createdAt ?? new Date()
         }
+    }
+
+    public get id(){
+        return this._id
     }
 
     public set content(content: NotificationContent) {
@@ -40,7 +47,7 @@ export class Notification {
         this.data.readAt = readAt
     }
 
-    public get readAt(): Date | null | undefined{
+    public get readAt(): Date | null | undefined {
         return this.data.readAt
     }
 

@@ -11,6 +11,7 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
+    "strict": true, //Validação mais profunda das tipagens
     "skipLibCheck": true,
     "strictNullChecks": false,
     "noImplicitAny": false,

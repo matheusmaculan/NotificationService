@@ -3,7 +3,7 @@ import { SendNotification } from "./send-notification-use-case"
 
 
 describe('Sendo Notification',() => {
-    test('it should be able to sendo a notification', async () => {
+    test('it should be able to send  a notification', async () => {
         const notificationRepository = new inMemoryNotificationsRepository
         const sendNotification = new SendNotification(notificationRepository);
 
@@ -17,5 +17,3 @@ describe('Sendo Notification',() => {
         expect(notificationRepository.notifications[0]).toEqual(notification);
     })  
 })
-
-// Conceito de banco de dados em memória

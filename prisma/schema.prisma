@@ -17,8 +17,7 @@ model Notification {
   content      String
   category     String
   createdAt    DateTime @default(now())
-  readAt       DateTime? //Interrogação pois pode ser nula
-
+  readAt       DateTime?
 @@index([recipientId]) 
 }
 

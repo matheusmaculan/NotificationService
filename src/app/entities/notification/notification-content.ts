@@ -5,15 +5,15 @@ export class NotificationContent {
         return this.content
     }
 
-    private validateContentLenght(content: string): boolean {
+    private validateNotificationContentLenght(content: string): boolean {
         return content.length >= 5 && content.length <= 240
     }
 
     constructor(content: string) {
-        const isContentLenghtValid = this .validateContentLenght(content);
+        const isContentLenghtValid = this.validateNotificationContentLenght(content);
 
         if (!isContentLenghtValid) {
-            throw new Error('Content lenght error.');
+            throw new Error('Content length error.');
         }
     }
 }

@@ -6,6 +6,6 @@ export class inMemoryNotificationsRepository  implements NotificationsRepository
     public notifications: Notification[]= []
 
     async create(notification: Notification) {
-        this.notifications.push(notification)
+        this.notifications.push(notification) // é como se fosse o banco de dados, ele da push e vai salvando no array
     }
 }
