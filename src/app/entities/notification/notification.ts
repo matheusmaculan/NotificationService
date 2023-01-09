@@ -7,6 +7,7 @@ export interface NotificationData{
     category: string;
     readAt?: Date | null;
     createdAt: Date;
+    canceledAt?: Date;
     recipientId: string;
 }
 
@@ -49,6 +50,14 @@ export class Notification {
 
     public get readAt(): Date | null | undefined {
         return this.data.readAt
+    }
+
+    public get canceledAt(): Date | null | undefined {
+        return this.data.canceledAt
+    }
+
+    public cancel() { //não foi criado um setter pq ao cancelar irá pegar a data atual, não precisa passar por parametro
+        this.data.canceledAt = new Date();
     }
 
     public get createdAt(): Date {

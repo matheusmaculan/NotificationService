@@ -11,4 +11,4 @@ export class PrismaNotificationMapper {  //Mapper faz a conversão dos dados, as
         createdAt: notification.createdAt,
     }
     }
-}
+} 

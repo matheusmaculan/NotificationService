@@ -1,4 +1,7 @@
 export class NotificationContent {
+    static create(arg0: string): NotificationContent {
+        throw new Error("Method not implemented.");
+    }
     private readonly content: string;
 
     get value(): string {

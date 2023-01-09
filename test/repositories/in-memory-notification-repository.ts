@@ -3,6 +3,12 @@ import { NotificationsRepository } from "../../src/app/repositories/notification
 
 
 export class inMemoryNotificationsRepository  implements NotificationsRepository {
+    findById(notificationId: string): Promise<Notification> {
+        throw new Error("Method not implemented.")
+    }
+    save(notification: Notification): Promise<void> {
+        throw new Error("Method not implemented.")
+    }
     public notifications: Notification[]= []
 
     async create(notification: Notification) {

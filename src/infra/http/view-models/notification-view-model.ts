@@ -9,4 +9,4 @@ export class NotificationViewModel { // é parecido com o mapper, mas aqui eu se
             recipientId: notification.recipientId,
         }
     }
-}
+} 
